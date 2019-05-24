@@ -1,0 +1,43 @@
+
+----- Testing some methods from module laps -----
+
+file FR935-25_04_2018_dois_trksegs_com_waypoints.gpx
+
+Testing Lap.__init__() by creating a lap with the entire track:
+Total lap distance = 14002.151578823416
+Total distance of reference track = 14002.151578823416
+
+Testing Lap.getLapNumber():
+1
+
+Testing Lap.getStartingDistance():
+0
+
+Testing Lap.getFastestPace():
+(6349.994388759608, 3.248568723762268)
+(1780.0, 3.248568723762268)
+
+Testing Lap.getSlowestPace():
+(3942.4463276080996, 9.090224812687342)
+(1112.0, 9.090224812687342)
+
+Testing LapExtractor.getLapsFromListOfTimeMarkers():
+lap number | lap distance | lap time | lap starts at distance
+1   13244.90066383408   3602.0   0
+2   757.2509149893358   187.0   13244.90066383408
+
+sum of all laps distances = 14002.151578823416
+track total distance = 14002.151578823416
+
+file MaratonaAveiro2019.gpx
+
+Testing LapExtractor.getLapsFromListOfTimeMarkers():
+lap number | lap distance | lap time | lap starts at distance
+1   14927.5080300066   3600.0   0
+2   14386.247710070998   3600.0   14927.5080300066
+3   13240.955132326126   3430.0   29313.7557400776
+
+sum of all laps distances = 42554.710872403724
+track total distance = 42554.710872403724
+
+----- End of tests -----
