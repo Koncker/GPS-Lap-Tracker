@@ -22,11 +22,10 @@ print("\nPace of each lap:")
 
 
 lapExtractor = LapExtractor(track).getAutoLapsByDistance()
-zeroFillSize = round(math.log(len(lapExtractor),10))
+zeroFillSize = int(math.log(len(lapExtractor),10)) + 1      #Guarantees that our log value for zeroFill on the left, always matches the maximum number of digits
 
 for element in lapExtractor:
     timeDeltaStr = Analyse.paceDecimalMinutesToMinSec(element.averageSpeed(expressAs = "pace"))
-    
     print(str(element.getLapNumber()).zfill(zeroFillSize), ' ', timeDeltaStr)
 
 
