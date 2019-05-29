@@ -2,6 +2,7 @@
 
 from myPyGPX import *
 from laps import *
+import math
 import matplotlib
 
 
@@ -21,17 +22,16 @@ print("\nPace of each lap:")
 
 
 lapExtractor = LapExtractor(track).getAutoLapsByDistance()
+zeroFillSize = round(math.log(len(lapExtractor),10))
 
 for element in lapExtractor:
-    timeDeltaStr = Analyse.paceDecimalMinutesToMinSec(element.averageSpeed(expressAs = "pace")) 
-    if(element.getLapNumber() <= 9):
-        print( '% 2d' % element.getLapNumber(), '', timeDeltaStr)
-    else:
-         print(element.getLapNumber(), '', timeDeltaStr)
+    timeDeltaStr = Analyse.paceDecimalMinutesToMinSec(element.averageSpeed(expressAs = "pace"))
+    
+    print(str(element.getLapNumber()).zfill(zeroFillSize), ' ', timeDeltaStr)
 
 
-print("\n Plot the laps with numbers [2, 10, 21, 37, 42, 43]")
-print("\n Need to CLOSE THE GRAPH WINDOW manually")
+print("\nPlot the laps with numbers [2, 10, 21, 37, 42, 43]")
+print("\nNeed to CLOSE THE GRAPH WINDOW manually")
 
 listOfLaps = [2,10,21,37,42,43]
 listOfLapPoints = []
