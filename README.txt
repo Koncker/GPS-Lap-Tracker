@@ -24,6 +24,6 @@ Known Bugs:
 	- No Bugs
 
 Change Log:
-	- Project Upload
+	- Fixed an issue where if there were over 100 laps, laps lower than 100 would have incorrect indentation
 
 All rights of this program are reserved to Vicky 'Koncker' Rajani & Pedro Assunção
